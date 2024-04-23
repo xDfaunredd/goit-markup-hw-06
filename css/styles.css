@@ -87,6 +87,7 @@ img {
 .header > .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header-nav {
@@ -106,7 +107,8 @@ img {
 }
 
 .header-nav > .logo {
-  margin-right: 76px;
+  /* margin-right: 76px; */
+  padding: 16px 0;
 }
 
 .logo-color {
@@ -114,15 +116,12 @@ img {
 }
 
 .header-list {
-  /* display: flex;
-  padding-left: 0;
-  gap: 40px; */
   display: none;
 }
 
-/* .header-item:first-child {
+.header-item:first-child {
   position: relative;
-} */
+}
 
 .header-item:first-child .header-link {
   position: relative;
@@ -186,6 +185,117 @@ img {
   color: #404bbf;
 }
 
+.header-open-btn {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+/* ----------------MODAL_MOB---------------- */
+
+.modal-mob {
+  padding: 24px 24px 40px 16px;
+  position: fixed;
+
+  opacity: 0;
+  pointer-events: none;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+
+  z-index: 999;
+}
+
+.modal-mob-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  border-radius: 50%;
+  border: 1px solid #e7e9fc;
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 24px;
+}
+
+.modal-mob-btn-icon {
+  width: 8px;
+  height: 8px;
+}
+
+.modal-mob-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+
+.modal-mob-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.modal-mob-item:first-child .modal-mob-link {
+  color: #404bbf;
+}
+
+.mob-address-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mob-address-link {
+  display: inline-flex;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
+
+.mob-address {
+  font-style: normal;
+}
+
+.mob-address-item:first-child .mob-address-link {
+  color: #4d5ae5;
+}
+.mob-icon-list {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.mob-icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.mob-icon-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ----------------MODAL_MOB---------------- */
+
 /* ----------------HEADER---------------- */
 
 /* -------------SERVICE-------------- */
@@ -201,8 +311,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 188px 0;
-  max-width: 1440px;
+  padding: 72px 0;
+
   margin: 0 auto;
 }
 
@@ -247,16 +357,15 @@ img {
 
 .service-title {
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
-
-  max-width: 496px;
-  margin: 0 auto;
-  margin-bottom: 48px;
-
   color: #fff;
+
+  width: 216px;
+  margin: 0 auto;
+  margin-bottom: 72px;
 }
 
 /* -------------SERVICE-------------- */
@@ -363,7 +472,6 @@ img {
 }
 
 .team-icon-item {
-  flex-basis: calc((100% - 3 * 24px) / 4);
 }
 
 .team-icon-link {
@@ -482,11 +590,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 72px;
-  /* align-items: baseline; */
-}
-
-.footer-div {
-  /* margin-right: 120px; */
 }
 
 .footer .logo {
@@ -532,16 +635,9 @@ img {
   gap: 16px;
 }
 
-.footer .team-icon-item {
-  flex-basis: calc((100% - 3 * 16px) / 4);
-}
-
 .footer .team-icon-link:hover,
 .footer .team-icon-link:focus {
   background-color: #31d0aa;
-}
-
-.footer-form-div {
 }
 
 .footer-form {
@@ -635,7 +731,7 @@ img {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-open {
+.is-open {
   opacity: 1;
   pointer-events: auto;
 }
@@ -889,6 +985,72 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* ----------------HEADER---------------- */
+  .header-open-btn {
+    display: none;
+  }
+
+  .header-list {
+    display: flex;
+    padding-left: 0;
+    gap: 40px;
+    margin-left: 120px;
+  }
+
+  .header-address {
+    font-style: normal;
+    display: block;
+  }
+
+  .header-address-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header-address-link {
+    padding: 0;
+
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+  }
+  /* ----------------HEADER---------------- */
+
+  /* -------------SERVICE-------------- */
+
+  .service {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/dark-bg-tab.jpg);
+
+    padding: 112px 0;
+  }
+  @media screen and (min-resolution: 192dpi) {
+    .service {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/dark-bg-tab-2x.jpg);
+    }
+  }
+
+  .service-title {
+    font-size: 56px;
+    line-height: 1.07;
+    text-align: center;
+    color: #fff;
+
+    width: 496px;
+    margin-bottom: 36px;
+  }
+  /* -------------SERVICE-------------- */
+
   /* ---------STRATEGIES-------------------- */
 
   .strategies-list {
@@ -936,24 +1098,31 @@ img {
 
   /*----------------PORTFOLIO---------------- */
 
-  .service {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url(../images/dark-bg-tab.jpg);
+  /* ----------------FOOTER---------------- */
+
+  .footer > .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    justify-content: center;
+    /* align-items: baseline; */
   }
-  @media screen and (min-resolution: 192dpi) {
-    .service {
-      background-image: linear-gradient(
-          to bottom,
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/dark-bg-tab-2x.jpg);
-    }
+
+  .footer-text {
+    width: 264px;
   }
+
+  .footer-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .footer-form-title {
+    text-align: left;
+
+    margin-bottom: 16px;
+  }
+  /* ----------------FOOTER---------------- */
 }
 /* ##################################### */
 /* ##################################### */
@@ -987,6 +1156,50 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* ----------------HEADER---------------- */
+
+  .header-address-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .header-address-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  /* ----------------HEADER---------------- */
+
+  /* -------------SERVICE-------------- */
+  .service {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/dark-bg-pc.jpg);
+    padding: 188px 0;
+    max-width: 1440px;
+  }
+  @media screen and (min-resolution: 192dpi) {
+    .service {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/dark-bg-pc-2x.jpg);
+    }
+  }
+
+  .service-title {
+    margin-bottom: 48px;
+  }
+  /* -------------SERVICE-------------- */
+
   /* ---------STRATEGIES-------------------- */
 
   .strategies-list {
@@ -1045,24 +1258,27 @@ img {
   }
   /*----------------PORTFOLIO---------------- */
 
-  .service {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url(../images/dark-bg-pc.jpg);
+  /* ----------------FOOTER---------------- */
+
+  .footer > .container {
+    flex-wrap: nowrap;
+    gap: 72px 24px;
+    justify-content: start;
   }
-  @media screen and (min-resolution: 192dpi) {
-    .service {
-      background-image: linear-gradient(
-          to bottom,
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/dark-bg-pc-2x.jpg);
-    }
+
+  .footer-div {
+    margin-right: 120px;
   }
+
+  .footer-form-div {
+    margin-left: 80px;
+  }
+
+  .footer-form-input {
+    width: 264px;
+  }
+
+  /* ----------------FOOTER---------------- */
 }
 /* ##################################### */
 /* ##################################### */
