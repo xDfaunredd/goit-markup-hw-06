@@ -738,7 +738,7 @@ img {
 
 .modal {
   background-color: #fcfcfc;
-  width: 408px;
+  width: 288px;
   min-height: 584px;
   position: absolute;
   top: 50%;
@@ -896,8 +896,10 @@ img {
   letter-spacing: 0.04em;
   color: #8e8f99;
 
+  display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 .modal-span-icon {
@@ -910,8 +912,7 @@ img {
   border: 1px solid rgba(46, 47, 66, 0.4);
   width: 16px;
   height: 16px;
-
-  margin-right: 8px;
+  flex-shrink: 0;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1123,6 +1124,17 @@ img {
     margin-bottom: 16px;
   }
   /* ----------------FOOTER---------------- */
+
+  /* ------------ FORM ------------------- */
+  .modal {
+    width: 408px;
+  }
+
+  .modal-text {
+    justify-content: start;
+  }
+
+  /* ------------ FORM ------------------- */
 }
 /* ##################################### */
 /* ##################################### */
